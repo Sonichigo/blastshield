@@ -1,0 +1,19 @@
+title: blastshield
+description: "An MCP server that makes agents show their blast radius before touching your database."
+baseurl: "/blastshield"
+url: "https://sonichigo.github.io"
+
+theme: minima
+remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Just the Docs config
+search_enabled: true
+color_scheme: dark
+
+nav_sort: order
+
+footer_content: "Apache-2.0 &copy; Animesh Pathak"
