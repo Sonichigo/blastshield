@@ -1,0 +1,7 @@
+# Pinned to the versions this project was built and tested against.
+mcp[cli]==2.1.0
+psycopg[binary,pool]==3.3.4
+pymongo==4.17.0
+sqlglot==30.17.0
+pydantic==2.13.4
+pydantic-settings==2.15.0

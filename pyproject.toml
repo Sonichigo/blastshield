@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "blastshield"
+version = "0.1.0"
+description = "An MCP server that makes agents show their blast radius before touching your database. PostgreSQL + MongoDB, dry-run first, rollback always."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+authors = [{ name = "Animesh Pathak", email = "hello@sonichigo.com" }]
+keywords = ["mcp", "database", "devops", "safety", "postgres", "mongodb", "agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+]
+dependencies = [
+    "mcp[cli]>=2.1.0",
+    "psycopg[binary,pool]>=3.3.4",
+    "pymongo>=4.17.0",
+    "sqlglot>=30.17.0",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.15.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+    "pytest-asyncio==1.4.0",
+    "mongomock==4.3.0",
+    "ruff>=0.8",
+]
+
+[project.scripts]
+blastshield = "blastshield.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/sonichigo/blastshield"
+Blog = "https://blog.sonichigo.com"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/blastshield"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
